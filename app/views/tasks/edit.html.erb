@@ -1,0 +1,14 @@
+<h1 class="mb-3">Edit task</h1>
+<%= form_with model: @task do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, class: "form-control mb-3" %>
+  <%= f.label :details %>
+  <%= f.text_area :details, class: "form-control mb-3", rows: 2  %>
+  <div class="form-check mb-3">
+    <%= f.check_box :completed, class: "form-check-input", id: "task_completed" %>
+    <%= f.label :completed, "Completed", class: "form-check-label", for: "task_completed" %>
+  </div>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
+<hr class="my-4">
+<%= link_to '<i class="fa-solid fa-arrow-rotate-left"></i> Back to list'.html_safe, tasks_path, class: 'text-decoration-none' %>
